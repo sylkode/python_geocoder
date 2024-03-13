@@ -59,4 +59,11 @@ The coordinate system used is WGS 84 (epsg:4326).
 
 # Requirements
 
+Script written for Python 3  
+
+the following python libraries are used: 
+
+geocoder==1.38.1  
+numpy==1.26.4  
+pandas==2.2.1  
 
