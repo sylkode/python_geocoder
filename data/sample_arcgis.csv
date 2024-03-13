@@ -1,0 +1,6 @@
+id,city,country,housenumber,postcode,street,hnum_street,to_geocode,gc_lat,gc_lon,gc_address,gc_country,gc_postcode,gc_city
+1,Thionville,FR,63,,avenue Maréchal Foch,63 avenue Maréchal Foch,"63 avenue Maréchal Foch, Thionville, FR|FR",49.359577018469366,6.162854994723034,"63 Boulevard Foch, 57100, Thionville, Moselle, Grand Est",,,
+2,Leudelange,LU,,L-3377,rue de la gare, rue de la gare," rue de la gare, L-3377, Leudelange, LU|LU",49.57053055745434,6.06282364569262,"Rue de la Gare, 3377, Leudelange",,,
+3,Differdange,LU,51,L-4620,rue Emile Mark,51 rue Emile Mark,"51 rue Emile Mark, L-4620, Differdange, LU|LU",49.523109290526776,5.892926028879799,"51 Rue Emile Mark, 4620, Differdange",,,
+4,Luxembourg,LU,48A,,rue Michel Rodange,48A rue Michel Rodange,"48A rue Michel Rodange, Luxembourg, LU|LU",49.60355058293956,6.124973989150021,"48A Rue Michel Rodange, 2430, Luxembourg, Hollerich",,,
+

@@ -1,3 +1,5 @@
+import re
+
 import pandas as pd
 import geocoder
 import numpy as np
@@ -155,6 +157,15 @@ def check(args):
         print(f'\t{key} : {vars(args)[key]}')
 
 
+class StoreDictKeyPair(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        my_dict = {}
+        for kv in values.split(","):
+            k, v = kv.split(":")
+            my_dict[k] = v
+        setattr(namespace, self.dest, my_dict)
+
+
 class LoadFromFile(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
         with values as f:
@@ -176,7 +187,11 @@ def main():
     parser.add_argument('--check', help='display default parameters', action="store_true")
     parser.add_argument('--infile', help='csv input file', default='../data/sample.csv')
     parser.add_argument('--outfile', help='csv output file', default='../data/sample_geocoded.csv')
-    parser.add_argument('--columns_map', help='link keys with the columnnames: city mycitycolumn country col2 housenumber col4 postcode CP street col3', nargs='*', required=False,
+    # parser.add_argument('--columns_map', help='link keys with the columnnames: city mycitycolumn country col2 housenumber col4 postcode CP street col3',
+    #                     nargs='*', required=False,
+    #                     default=defaultcolnames)
+    parser.add_argument("--columns_map", dest="columns_map", help='link keys with the columnnames: city:mycitycolumn,country:col2,housenumber:col4,postcode:CP,street:col3',
+                        action=StoreDictKeyPair, metavar="KEY1:VAL1,KEY2:VAL2...", required=False,
                         default=defaultcolnames)
     parser.add_argument('--api_key', help='textfile location with API-key', required=False, default=apikey)
     parser.add_argument('--params', type=open, action=LoadFromFile, help="read parameter file", required=False)
